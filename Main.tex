@@ -20,6 +20,7 @@
 \usepackage{colortbl}         %%% Usar biblioteca de cores
 %\usepackage{indentfirst}	  %%% Indenta 1º parágrafo de cada seção.
 \usepackage[alf]{abntex2cite} %%% Estilo das Referências Bibliográficas
+\usepackage{fancyhdr}  %utiliza biblioteca de cabeçalho e rodapé
 \usepackage{pdfpages}         %%% Permite inserir arquivos PDF no texto
 %\usepackage{times}                         %%% Troca para fonte TIMES
 %\usepackage{helvet}                        %%% Troca para fonte HELVET
@@ -40,6 +41,16 @@
 %#################################################################%
 \begin{document} 
 
+%%LDN Configurações do CABEÇALHO e RODAPÉ
+\pagestyle{fancy} % permite alterar cabeçalho e rodapé
+\renewcommand{\headrulewidth}{0.5pt}
+%\renewcommand{\footrulewidth}{0.5pt}
+\lhead[\thepage]{} % esquerda do cabeçalho
+\chead{} % centro do cabeçalho
+\rhead[]{\thepage} % direita do cabeçalho
+\lfoot{} % esquerda do rodapé
+\cfoot{} % centro do rodapé
+\rfoot{} % direita do rodapé
 
 %%% Início CAPA DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{titlepage}
@@ -66,10 +77,16 @@
 %%% FIM CAPA DO DOCUMENTO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
 %%% Início COSTAS DA CAPA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \thispagestyle{empty} %%% Oculta o número das costas da capa
 %%% Fim COSTAS DA CAPA%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%%% Início do Cabeçalho e Rodapé
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage        %%% Inicia próxima página em uma ímpar
+\tableofcontents        %%% insere o sumário
 
 
 %%% Início DO TEXTO (Capitulo 1) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
